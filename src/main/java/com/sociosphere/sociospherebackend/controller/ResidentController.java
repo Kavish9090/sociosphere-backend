@@ -5,6 +5,8 @@ import com.sociosphere.sociospherebackend.service.ResidentService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/residents")
 public class ResidentController {
@@ -21,5 +23,11 @@ public class ResidentController {
         residentService.saveResident(resident);
 
         return ResponseEntity.ok("Resident saved successfully");
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Resident>> getAllResidents() {
+
+        return ResponseEntity.ok(residentService.getAllResidents());
     }
 }

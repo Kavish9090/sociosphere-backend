@@ -1,8 +1,11 @@
 package com.sociosphere.sociospherebackend.service;
 
 import com.sociosphere.sociospherebackend.entity.Resident;
+import java.util.List;
 
 public interface ResidentService {
 
     void saveResident(Resident resident);
+    List<Resident> getAllResidents();
+
 }
