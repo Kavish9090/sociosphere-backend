@@ -38,4 +38,14 @@ public class ResidentController {
 
         return ResponseEntity.ok("Resident deleted successfully");
     }
+
+    @PutMapping("/{residentId}")
+    public ResponseEntity<String> updateResident(
+            @PathVariable Long residentId,
+            @RequestBody Resident resident) {
+
+        residentService.updateResident(residentId, resident);
+
+        return ResponseEntity.ok("Resident updated successfully");
+    }
 }

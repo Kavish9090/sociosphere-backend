@@ -27,4 +27,18 @@ public class ResidentServiceImpl implements ResidentService {
     public void deleteResident(Long residentId) {
         residentRepository.deleteById(residentId);
     }
+
+    @Override
+    public void updateResident(Long residentId, Resident resident) {
+
+        Resident existingResident = residentRepository.findById(residentId)
+                .orElseThrow(() -> new RuntimeException("Resident not found"));
+
+        existingResident.setFullName(resident.getFullName());
+        existingResident.setEmail(resident.getEmail());
+        existingResident.setPhoneNumber(resident.getPhoneNumber());
+        existingResident.setFlatNumber(resident.getFlatNumber());
+
+        residentRepository.save(existingResident);
+    }
 }
