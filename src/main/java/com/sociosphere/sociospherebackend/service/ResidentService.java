@@ -7,5 +7,6 @@ public interface ResidentService {
 
     void saveResident(Resident resident);
     List<Resident> getAllResidents();
+    void deleteResident(Long residentId);
 
 }

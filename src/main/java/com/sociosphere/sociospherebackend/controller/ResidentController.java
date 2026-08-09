@@ -30,4 +30,12 @@ public class ResidentController {
 
         return ResponseEntity.ok(residentService.getAllResidents());
     }
+
+    @DeleteMapping("/{residentId}")
+    public ResponseEntity<String> deleteResident(@PathVariable Long residentId) {
+
+        residentService.deleteResident(residentId);
+
+        return ResponseEntity.ok("Resident deleted successfully");
+    }
 }
