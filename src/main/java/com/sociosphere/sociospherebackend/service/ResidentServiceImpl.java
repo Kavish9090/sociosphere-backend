@@ -41,4 +41,10 @@ public class ResidentServiceImpl implements ResidentService {
 
         residentRepository.save(existingResident);
     }
+
+    @Override
+    public Resident getResidentById(Long residentId) {
+        return residentRepository.findById(residentId)
+                .orElseThrow(() -> new RuntimeException("Resident not found"));
+    }
 }

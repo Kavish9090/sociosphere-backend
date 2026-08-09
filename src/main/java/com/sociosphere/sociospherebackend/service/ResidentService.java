@@ -9,5 +9,6 @@ public interface ResidentService {
     List<Resident> getAllResidents();
     void deleteResident(Long residentId);
     void updateResident(Long residentId, Resident resident);
+    Resident getResidentById(Long residentId);
 
 }

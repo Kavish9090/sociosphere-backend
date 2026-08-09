@@ -31,8 +31,18 @@ public class ResidentController {
         return ResponseEntity.ok(residentService.getAllResidents());
     }
 
+    @GetMapping("/{residentId}")
+    public ResponseEntity<Resident> getResidentById(
+            @PathVariable Long residentId) {
+
+        return ResponseEntity.ok(
+                residentService.getResidentById(residentId)
+        );
+    }
+
     @DeleteMapping("/{residentId}")
-    public ResponseEntity<String> deleteResident(@PathVariable Long residentId) {
+    public ResponseEntity<String> deleteResident(
+            @PathVariable Long residentId) {
 
         residentService.deleteResident(residentId);
 
